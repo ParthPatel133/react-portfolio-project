@@ -83,7 +83,7 @@ const StyledCard = styled.div`
       margin-left: 1rem;
       background: white;
       color: black;
-      padding: 1rem;
+      padding: 0.5rem;
       border-radius: 0.5rem;
     }
   }
