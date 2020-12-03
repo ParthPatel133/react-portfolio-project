@@ -47,7 +47,7 @@ const StyledMovie = styled.div`
   .line {
     height: 0.3rem;
     background: #cccccc;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   img {
     width: 100%;
