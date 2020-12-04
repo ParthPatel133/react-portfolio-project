@@ -4,6 +4,7 @@ import Nav from './components/Nav';
 import ContactUs from './pages/ContactUs';
 import OurWork from './pages/OurWork';
 import {Route, Switch} from 'react-router-dom';
+import MovieDetail from './pages/MovieDetail';
 
 function App() {
   return (
@@ -14,10 +15,13 @@ function App() {
         <Route path='/' exact>
           <AboutUs />
         </Route>
-        <Route path='/work'>
+        <Route path='/work' exact>
           <OurWork />
         </Route>
-        <Route path='/contact'>
+        <Route path='/work/:id'>
+          <MovieDetail />
+        </Route>
+        <Route path='/contact' exact>
           <ContactUs />
         </Route>
       </Switch>
