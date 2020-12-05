@@ -14,7 +14,7 @@ const FaqSection = () => {
       variants={scrollShow}
       ref={element}
       animate={controls}
-      initial={'hidden'}
+      initial='hidden'
     >
       <h2>
         Any Questions <span>FAQ</span>
