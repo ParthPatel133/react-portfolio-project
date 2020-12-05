@@ -11,11 +11,20 @@ import {
   StyledHide,
   StyledImage,
 } from '../styles';
+import {scrollShow} from '../animation';
+import {useScroll} from './useScroll';
 
 const ServicesSection = () => {
+  const [element, controls] = useScroll();
+
   return (
     <div>
-      <StyledServices>
+      <StyledServices
+        variants={scrollShow}
+        ref={element}
+        animate={controls}
+        initial='hidden'
+      >
         <StyledDescription>
           <h2>
             High <span>quality</span> services
