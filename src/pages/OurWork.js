@@ -5,8 +5,9 @@ import athlete from '../img/athlete-small.png';
 import theracer from '../img/theracer-small.png';
 import goodtimes from '../img/goodtimes-small.png';
 
+//animation imports
 import {motion} from 'framer-motion';
-import {pageAnimation} from '../animation';
+import {fade, pageAnimation, photoAnimation, lineAnimation} from '../animation';
 
 const OurWork = () => {
   return (
@@ -18,10 +19,12 @@ const OurWork = () => {
       style={{background: '#fff'}}
     >
       <StyledMovie>
-        <h2>The Athlete</h2>
-        <div className='line'></div>
+        <motion.h2 variants={fade}>The Athlete</motion.h2>
+        <motion.div variants={lineAnimation} className='line'></motion.div>
         <Link to='/work/the-athlete'>
-          <img src={athlete} alt='athlete' />
+          <StyledHideImgOverflow>
+            <motion.img variants={photoAnimation} src={athlete} alt='athlete' />
+          </StyledHideImgOverflow>
         </Link>
       </StyledMovie>
       <StyledMovie>
@@ -55,7 +58,7 @@ const StyledMovie = styled.div`
   padding-bottom: 5rem;
   .line {
     height: 0.3rem;
-    background: #cccccc;
+    background: #23d997;
     margin-bottom: 2rem;
   }
   img {
@@ -63,6 +66,10 @@ const StyledMovie = styled.div`
     height: 90vh;
     object-fit: cover;
   }
+`;
+
+const StyledHideImgOverflow = styled.div`
+  overflow: hidden;
 `;
 
 export default OurWork;
