@@ -3,6 +3,10 @@ import {useState, useEffect, Fragment} from 'react';
 import {useHistory} from 'react-router-dom';
 import {MovieState} from '../movieState';
 
+//animation
+import {motion} from 'framer-motion';
+import {pageAnimation} from '../animation';
+
 const MovieDetail = () => {
   const history = useHistory();
   const url = history.location.pathname;
@@ -18,7 +22,12 @@ const MovieDetail = () => {
   return (
     <Fragment>
       {movie && (
-        <StyledDetails>
+        <StyledDetails
+          variants={pageAnimation}
+          initial='hidden'
+          animate='show'
+          exit='exit'
+        >
           <StyledHeadline>
             <h2>{movie.title}</h2>
             <img src={movie.mainImg} alt='movie' />
@@ -52,7 +61,7 @@ const Award = ({description, title}) => {
   );
 };
 
-const StyledDetails = styled.div`
+const StyledDetails = styled(motion.div)`
   color: white;
 `;
 
@@ -68,7 +77,7 @@ const StyledHeadline = styled.div`
   }
   img {
     width: 100%;
-    height: 70vh;
+    height: 90vh;
     object-fit: cover;
   }
 `;

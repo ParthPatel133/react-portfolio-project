@@ -6,24 +6,25 @@ import {
   StyledHide,
   StyledImage,
 } from '../styles';
+import {motion} from 'framer-motion';
 
 const AboutSection = () => {
   return (
     <StyledAbout>
       <StyledDescription>
-        <div className='title'>
+        <motion.div className='title'>
           <StyledHide>
-            <h1>We work to make</h1>
+            <motion.h2>We work to make</motion.h2>
           </StyledHide>
           <StyledHide>
-            <h1>
+            <motion.h2>
               your <span>dreams</span>
-            </h1>
+            </motion.h2>
           </StyledHide>
           <StyledHide>
-            <h1>come true</h1>
+            <motion.h2>come true</motion.h2>
           </StyledHide>
-        </div>
+        </motion.div>
         <p>
           Contact us for make your moment special with photography and
           videography. We have professionals with amazing skills.
@@ -36,7 +37,5 @@ const AboutSection = () => {
     </StyledAbout>
   );
 };
-
-//styled-components
 
 export default AboutSection;
