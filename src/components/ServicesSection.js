@@ -81,6 +81,10 @@ const StyledServices = styled(StyledAbout)`
 const StyledCards = styled.div`
   display: flex;
   flex-wrap: wrap;
+  @media (max-width: 900px) {
+    justify-content: center;
+    text-align: center;
+  }
 `;
 
 const StyledCard = styled.div`
@@ -94,6 +98,21 @@ const StyledCard = styled.div`
       color: black;
       padding: 0.5rem;
       border-radius: 0.5rem;
+    }
+  }
+  @media (max-width: 900px) {
+    flex-basis: 20rem;
+    padding: 0;
+    /* justify-content: center; */
+    text-align: center;
+    align-items: center;
+    .icon {
+      justify-content: center;
+    }
+    p {
+      display: inline-block;
+      /* text-align: center; */
+      /* justify-content: center; */
     }
   }
 `;

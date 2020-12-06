@@ -83,16 +83,16 @@ export const sliderContainer = {
 export const scrollShow = {
   hidden: {
     opacity: 0,
-    scale: 1.2,
+    scale: 1.02,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
   show: {
     opacity: 1,
     scale: 1,
     transition: {
-      duration: 0.5,
+      duration: 0.4,
     },
   },
 };

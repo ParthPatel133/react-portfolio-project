@@ -98,6 +98,9 @@ const StyledMovie = styled(motion.div)`
     height: 90vh;
     object-fit: cover;
   }
+  @media (max-width: 900px) {
+    padding-bottom: 2rem;
+  }
 `;
 
 const StyledHideImgOverflow = styled.div`
