@@ -8,7 +8,6 @@ const ScrollTop = () => {
       top: 0,
       left: 0,
     });
-    console.log(window);
   }, [pathname]);
 
   return null;

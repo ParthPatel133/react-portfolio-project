@@ -3,7 +3,7 @@ import FaqSection from '../components/FaqSection';
 import ServicesSection from '../components/ServicesSection';
 
 //animation
-import {motion} from 'framer-motion';
+import {motion, VisibilityAction} from 'framer-motion';
 import {pageAnimation} from '../animation';
 import ScrollTop from '../components/ScrollTop';
 

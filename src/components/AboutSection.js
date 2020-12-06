@@ -1,5 +1,6 @@
 import home1 from '../img/home1.png';
-import styled from 'styled-components';
+import MediaQuery from 'react-responsive';
+
 import {
   StyledAbout,
   StyledDescription,
@@ -37,7 +38,9 @@ const AboutSection = () => {
       <StyledImage>
         <motion.img src={home1} alt='camera man' variants={photoAnimation} />
       </StyledImage>
-      <Wave />
+      <MediaQuery minDeviceWidth={900}>
+        <Wave />
+      </MediaQuery>
     </StyledAbout>
   );
 };
