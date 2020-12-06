@@ -1,6 +1,7 @@
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
 import {pageAnimation, titleAnimation} from '../animation';
+import ScrollTop from '../components/ScrollTop';
 
 const ContactUs = () => {
   return (
@@ -37,6 +38,7 @@ const ContactUs = () => {
           </StyledSocial>
         </StyledHide>
       </div>
+      <ScrollTop />
     </StyledContact>
   );
 };
