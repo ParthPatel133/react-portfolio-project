@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Nav = () => {
   return (
     <StyledNav>
-      <h1>
+      <h1 id='logo'>
         <Link to='/'>Click</Link>
       </h1>
       <ul>
@@ -51,6 +51,22 @@ const StyledNav = styled.nav`
       font-weight: lighter;
       font-size: 2rem;
       letter-spacing: 0.2rem;
+    }
+  }
+  @media (max-width: 565px) {
+    flex-direction: column;
+    padding: 0;
+    #logo {
+      display: inline-block;
+      margin-top: 2rem;
+    }
+    ul {
+      justify-content: space-around;
+      padding: 2rem;
+      width: 100%;
+      li {
+        padding: 0;
+      }
     }
   }
 `;
