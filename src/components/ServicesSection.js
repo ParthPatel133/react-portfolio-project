@@ -20,7 +20,7 @@ const ServicesSection = () => {
   return (
     <div>
       <StyledServices
-        // variants={scrollShow}
+        variants={scrollShow}
         ref={element}
         animate={controls}
         initial='hidden'
