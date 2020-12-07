@@ -62,12 +62,7 @@ button{
         line-height: 150%;
     }
 
-    #particles-js {
-        background: radial-gradient(circle, rgba(193, 196, 209, 1) 0%,
-        rgba(3, 3, 29, 1) 100%);
-        height: 100vh;
-        z-index: -10;
-    }
+   
 
 `;
 

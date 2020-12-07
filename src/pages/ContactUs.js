@@ -1,56 +1,62 @@
 import {motion} from 'framer-motion';
 import styled from 'styled-components';
-import {pageAnimation, titleAnimation} from '../animation';
+import {pageAnimation, titleAnimation, fade} from '../animation';
 import ScrollTop from '../components/ScrollTop';
 
 import Particles from 'react-particles-js';
 
 const ContactUs = () => {
   return (
-    <Particles
-      id='particles-js'
-      params={{
-        particles: {
-          number: {
-            value: 400,
-            density: {
-              enable: true,
-              value_area: 1000,
-            },
-          },
-          color: {
-            value: '#fff',
-          },
-          opacity: {
-            value: 0.5,
-            anim: {
-              enable: true,
-            },
-          },
-          size: {
-            value: 7,
-            random: true,
-            anim: {
-              enable: true,
-              speed: 3,
-            },
-          },
-          line_linked: {
-            enable: false,
-          },
-          move: {
-            speed: 0.2,
-          },
-        },
-      }}
+    <StyledContact
+      variants={pageAnimation}
+      initial='hidden'
+      animate='show'
+      exit='exit'
+      style={{position: 'relative'}}
     >
-      <StyledContact
-        variants={pageAnimation}
-        initial='hidden'
-        animate='show'
-        exit='exit'
-        style={{background: '#fff'}}
+      <StyledParticles
+        style={{position: 'absolute', zIndex: -10, width: '100%'}}
       >
+        <Particles
+          id='particles-js'
+          params={{
+            particles: {
+              number: {
+                value: 400,
+                density: {
+                  enable: true,
+                  value_area: 1000,
+                },
+              },
+              color: {
+                value: '#fff',
+              },
+              opacity: {
+                value: 0.5,
+                anim: {
+                  enable: true,
+                },
+              },
+              size: {
+                value: 7,
+                random: true,
+                anim: {
+                  enable: true,
+                  speed: 3,
+                },
+              },
+              line_linked: {
+                enable: false,
+              },
+              move: {
+                speed: 0.2,
+              },
+            },
+          }}
+        />
+      </StyledParticles>
+
+      <StyledContent variants={fade}>
         <StyledTitle>
           <StyledHide>
             <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
@@ -70,21 +76,19 @@ const ContactUs = () => {
                 <br />
                 <input type='email' placeholder='Enter your email' />
               </div>
-              <input type='submit' value='Submit' />
+              <input id='submit' type='submit' value='Submit' />
             </form>
           </div>
         </StyledForm>
-
-        <ScrollTop />
-      </StyledContact>
-    </Particles>
+      </StyledContent>
+      <ScrollTop />
+    </StyledContact>
   );
 };
 
 const StyledContact = styled(motion.div)`
   display: flex;
   flex-direction: column;
-  padding: 5rem;
   color: #353535;
   min-height: 90vh;
   @media (max-width: 565px) {
@@ -93,9 +97,14 @@ const StyledContact = styled(motion.div)`
   }
 `;
 
+const StyledContent = styled(motion.div)`
+  padding: 2rem;
+`;
+
 const StyledTitle = styled.div`
   margin-bottom: 4rem;
-  color: black;
+  color: white;
+  z-index: 50;
   @media (max-width: 565px) {
     margin: 2rem;
   }
@@ -106,11 +115,23 @@ const StyledForm = styled.div`
     margin: 1rem 0;
     justify-content: center;
     width: 100%;
+    color: white;
+  }
+  #submit {
+    margin-top: 1rem;
+    :hover {
+      background: #cecdcd;
+    }
   }
   input {
     padding: 0.5rem;
     align-self: center;
     width: 45%;
+    font-size: 1rem;
+    border-radius: 5px;
+    :focus {
+      outline: none;
+    }
   }
   @media (max-width: 565px) {
     div {
@@ -120,6 +141,17 @@ const StyledForm = styled.div`
     input {
       width: 80%;
     }
+  }
+`;
+
+const StyledParticles = styled.div`
+  #particles-js {
+    background: radial-gradient(
+      circle,
+      rgba(193, 196, 209, 1) 0%,
+      rgba(3, 3, 29, 1) 100%
+    );
+    height: 100vh;
   }
 `;
 
