@@ -18,26 +18,24 @@ const ContactUs = () => {
         </StyledHide>
       </StyledTitle>
 
-      <div>
-        <StyledHide>
-          <StyledSocial variants={titleAnimation}>
-            <StyledCircle />
-            <h2>Send Us A Message</h2>
-          </StyledSocial>
-        </StyledHide>
-        <StyledHide>
-          <StyledSocial variants={titleAnimation}>
-            <StyledCircle />
-            <h2>Send An Email</h2>
-          </StyledSocial>
-        </StyledHide>
-        <StyledHide>
-          <StyledSocial variants={titleAnimation}>
-            <StyledCircle />
-            <h2>Social Media</h2>
-          </StyledSocial>
-        </StyledHide>
+      <div id='particles'>
+        <div id='login'>
+          <form>
+            <div>
+              <label htmlFor='name'>Name</label>
+              <br />
+              <input type='text' placeholder='name' required />
+            </div>
+            <div>
+              <label htmlFor='email'>Email Id</label>
+              <br />
+              <input type='email' placeholder='email' />
+            </div>
+            <input type='submit' value='submit' />
+          </form>
+        </div>
       </div>
+
       <ScrollTop />
     </StyledContact>
   );
@@ -58,29 +56,31 @@ const StyledHide = styled.div`
   overflow: hidden;
 `;
 
-const StyledCircle = styled.div`
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem;
-  background: #353535;
-  @media (max-width: 900px) {
-    width: 1rem;
-    height: 1rem;
-  }
-`;
+const Styled;
 
-const StyledSocial = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  h2 {
-    margin: 2rem;
-  }
-  @media (max-width: 900px) {
-    h2 {
-      font-size: 1.5rem;
-      margin: 1rem;
-    }
-  }
-`;
+// const StyledCircle = styled.div`
+//   border-radius: 50%;
+//   width: 3rem;
+//   height: 3rem;
+//   background: #353535;
+//   @media (max-width: 900px) {
+//     width: 1rem;
+//     height: 1rem;
+//   }
+// `;
+
+// const StyledSocial = styled(motion.div)`
+//   display: flex;
+//   align-items: center;
+//   h2 {
+//     margin: 2rem;
+//   }
+//   @media (max-width: 900px) {
+//     h2 {
+//       font-size: 1.5rem;
+//       margin: 1rem;
+//     }
+//   }
+// `;
 
 export default ContactUs;
