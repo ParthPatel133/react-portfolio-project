@@ -3,41 +3,81 @@ import styled from 'styled-components';
 import {pageAnimation, titleAnimation} from '../animation';
 import ScrollTop from '../components/ScrollTop';
 
+import Particles from 'react-particles-js';
+
 const ContactUs = () => {
   return (
-    <StyledContact
-      variants={pageAnimation}
-      initial='hidden'
-      animate='show'
-      exit='exit'
-      style={{background: '#fff'}}
+    <Particles
+      id='particles-js'
+      params={{
+        particles: {
+          number: {
+            value: 400,
+            density: {
+              enable: true,
+              value_area: 1000,
+            },
+          },
+          color: {
+            value: '#fff',
+          },
+          opacity: {
+            value: 0.5,
+            anim: {
+              enable: true,
+            },
+          },
+          size: {
+            value: 7,
+            random: true,
+            anim: {
+              enable: true,
+              speed: 3,
+            },
+          },
+          line_linked: {
+            enable: false,
+          },
+          move: {
+            speed: 0.2,
+          },
+        },
+      }}
     >
-      <StyledTitle>
-        <StyledHide>
-          <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
-        </StyledHide>
-      </StyledTitle>
+      <StyledContact
+        variants={pageAnimation}
+        initial='hidden'
+        animate='show'
+        exit='exit'
+        style={{background: '#fff'}}
+      >
+        <StyledTitle>
+          <StyledHide>
+            <motion.h2 variants={titleAnimation}>Get in touch.</motion.h2>
+          </StyledHide>
+        </StyledTitle>
 
-      <StyledForm id='particles'>
-        <div id='login'>
-          <form>
-            <div>
-              <label htmlFor='name'>Name</label>
-              <br />
-              <input type='text' placeholder='Enter your name' required />
-            </div>
-            <div>
-              <label htmlFor='email'>Email Id</label>
-              <br />
-              <input type='email' placeholder='Enter your email' />
-            </div>
-            <input type='submit' value='Submit' />
-          </form>
-        </div>
-      </StyledForm>
+        <StyledForm id='particles'>
+          <div id='login'>
+            <form>
+              <div>
+                <label htmlFor='name'>Name</label>
+                <br />
+                <input type='text' placeholder='Enter your name' required />
+              </div>
+              <div>
+                <label htmlFor='email'>Email Id</label>
+                <br />
+                <input type='email' placeholder='Enter your email' />
+              </div>
+              <input type='submit' value='Submit' />
+            </form>
+          </div>
+        </StyledForm>
 
-      <ScrollTop />
-    </StyledContact>
+        <ScrollTop />
+      </StyledContact>
+    </Particles>
   );
 };
 
