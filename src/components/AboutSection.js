@@ -1,5 +1,6 @@
 import home1 from '../img/home1.png';
 import MediaQuery from 'react-responsive';
+import {Link} from 'react-router-dom';
 
 import {
   StyledAbout,
@@ -33,7 +34,21 @@ const AboutSection = () => {
           Contact us for make your moment special with photography and
           videography. We have professionals with amazing skills.
         </motion.p>
-        <motion.button variants={fade}>Contact Us</motion.button>
+        <motion.button variants={fade} style={{position: 'relative'}}>
+          <Link
+            to='/contact'
+            style={{
+              color: 'white',
+              textDecoration: 'none',
+              position: 'absolute',
+              inset: 0,
+              width: '100%',
+              height: '100%',
+              fontSize: '1.1rem',
+            }}
+          ></Link>
+          Contact Us
+        </motion.button>
       </StyledDescription>
       <StyledImage>
         <motion.img src={home1} alt='camera man' variants={photoAnimation} />
