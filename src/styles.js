@@ -12,8 +12,11 @@ export const StyledAbout = styled(motion.div)`
     /* display: block; */
     flex-direction: column;
     text-align: center;
+    padding: 2rem;
+  }
+  @media (max-width: 565px) {
     padding: 1rem;
-    /* justify-content: center; */
+    min-height: auto;
   }
 `;
 

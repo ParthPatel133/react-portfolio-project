@@ -17,7 +17,7 @@ const Nav = () => {
           <StyledNavLine
             transition={{duration: 0.75}}
             initial={{width: '0%'}}
-            animate={{width: pathname === '/' ? '50%' : '0%'}}
+            animate={{width: pathname === '/' ? '100%' : '0%'}}
           />
         </li>
         <li>
@@ -25,7 +25,7 @@ const Nav = () => {
           <StyledNavLine
             transition={{duration: 0.75}}
             initial={{width: '0%'}}
-            animate={{width: pathname === '/work' ? '50%' : '0%'}}
+            animate={{width: pathname === '/work' ? '100%' : '0%'}}
           />
         </li>
         <li>
@@ -33,7 +33,7 @@ const Nav = () => {
           <StyledNavLine
             transition={{duration: 0.75}}
             initial={{width: '0%'}}
-            animate={{width: pathname === '/contact' ? '50%' : '0%'}}
+            animate={{width: pathname === '/contact' ? '100%' : '0%'}}
           />
         </li>
       </ul>
@@ -60,7 +60,7 @@ const StyledNav = styled.nav`
     display: flex;
     list-style: none;
     li {
-      padding-left: 5rem;
+      margin-left: 4rem;
       position: relative;
     }
   }
@@ -85,6 +85,7 @@ const StyledNav = styled.nav`
       width: 100%;
       li {
         padding: 0;
+        margin-left: 0;
       }
     }
   }
@@ -96,10 +97,10 @@ const StyledNavLine = styled(motion.div)`
   width: 5%;
   position: absolute;
   bottom: -80%;
-  left: 50%;
+  left: 0%;
   @media (max-width: 565px) {
     left: 0%;
-    width: 100% !important;
+    bottom: -50%;
   }
 `;
 

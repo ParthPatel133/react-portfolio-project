@@ -38,7 +38,7 @@ const AboutSection = () => {
       <StyledImage>
         <motion.img src={home1} alt='camera man' variants={photoAnimation} />
       </StyledImage>
-      <MediaQuery minDeviceWidth={900}>
+      <MediaQuery minDeviceWidth={0}>
         <Wave />
       </MediaQuery>
     </StyledAbout>

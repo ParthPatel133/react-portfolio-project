@@ -87,6 +87,9 @@ const StyledWork = styled(motion.div)`
   @media (max-width: 900px) {
     padding: 2rem;
   }
+  @media (max-width: 560px) {
+    padding: 1rem;
+  }
 `;
 
 const StyledMovie = styled(motion.div)`
@@ -100,6 +103,9 @@ const StyledMovie = styled(motion.div)`
     width: 100%;
     height: 90vh;
     object-fit: cover;
+    @media (max-width: 560px) {
+      height: 70vh;
+    }
   }
   @media (max-width: 900px) {
     padding-bottom: 2rem;

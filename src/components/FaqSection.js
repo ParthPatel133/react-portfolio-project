@@ -91,6 +91,9 @@ const StyledFaq = styled(StyledAbout)`
       padding: 1rem 0rem;
     }
   }
+  @media (max-width: 565px) {
+    margin-bottom: 5rem;
+  }
 `;
 
 export default FaqSection;
